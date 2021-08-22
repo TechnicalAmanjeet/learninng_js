@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hack html</title>
+    <style>
+        body{
+            background-color: aquamarine;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            /* margin: auto; */
+        }
+        .container{
+            width: 80vw;
+            height: 90vh;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            background-color: aqua;
+            flex-direction: column;
+        }
+        .form{
+            display: flex;
+            font-size: 90px;
+            justify-content: center;
+            align-items: center;
+        }
+        #password{
+            width: 200px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <form action="" method="get">
+                <label for="password">Enter password : </label>
+                <input type="text" name="password" id="password">
+            </form>
+        </div>
+        <input type="password" name="" id="txt" onkeypress="onkey()">
+        <p class="output"></p>
+    </div>
+
+    <script>
+       const onkey= () =>{
+        //    var s=new String();
+           document.querySelector(".output").innerHTML = `You Entered ${event.key} and your key is ${event.code}`;
+       }
+</script>
+</body>
+</html>
