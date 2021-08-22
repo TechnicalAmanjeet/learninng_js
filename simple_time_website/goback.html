@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Back in your history</title>
+    <style>
+        body{
+            background-color: aquamarine;
+            align-items: center;
+        }
+        .container{
+            background-color: aqua;
+            margin: auto;
+            height: 50vh;
+            width: 90vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 60px;
+        }
+        button{
+            padding: 20px;
+            font-size: 35px;
+            font-weight: bolder;
+            background-color: rgb(40, 9, 68);
+            color: aliceblue;
+            border-radius: 25px;
+        }
+        p{
+            color: blueviolet;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body id="body">
+    <button onclick="dark()">dark mode</button>
+    <button onclick="light()">light mode</button>
+    <button onclick="def()">Default</button>
+    <div class="container">
+        <button onclick="goback()">Go Back</button>
+        <p>Click on the above butoon to go Back in your history.</p>
+    </div>
+
+    <script>
+        function goback(){
+            window.history.back();
+        }
+        function dark(){
+            document.getElementById("body").style.background ="black";
+            document.getElementById("body").style.color ="white";
+        }
+        function light(){
+            document.getElementById("body").style.background ="white";
+            document.getElementById("body").style.color ="black";
+        }
+        function def(){
+            document.getElementById("body").style.background ="aquamarine";
+            document.getElementById("body").style.color ="black";
+        }
+    </script>
+</body>
+</html>
