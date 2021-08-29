@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock.</title>
+    
+    <!-- addin google font roboto to our website  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- adding custom stylesheet  -->
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        main{
+            width: 100vw;
+            height: 100vh;
+            background-color: aquamarine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin:  auto;
+        }
+        .output{
+            background-color: aqua;
+            width: 80%;
+            /* height: ; */
+            text-align: center;
+            padding: 4px 10px;
+            font-size: 80px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <p class="output">Amanjeet Kumar</p>
+    </main>
+
+    <!-- custum javascript start from here -->
+    <script>
+        (function() {
+            setInterval(repeat,1000)
+        })()
+
+        function repeat(){
+                var tm = new Date().toLocaleTimeString();
+                var time = `Time : ${tm} .`
+                document.querySelector(".output").innerHTML=time;
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing Background Color.</title>
+
+    <!-- addin google font roboto to our website  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- adding custom stylesheet to our website -->
+    <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: space-between;
+            flex-direction: column;
+            text-align: center;
+        }
+        .btn{
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px;
+            border: 2px solid black;
+            width: 150px;
+            border-radius: 20px;
+            margin: auto;
+        }
+        .btn:hover{
+            border: none;
+            background-color: rgb(53, 4, 4);
+            color: whitesmoke;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click on the butoon to Change Background color</h1>
+    <button class="btn">Click me.</button>
+    <div></div>
+    
+    <!-- javascrip begins here -->
+    <script>
+        // M-1. Simple Mathod to add different background color
+        // const ref = document.querySelector(".btn");
+        // ref.addEventListener("click", ()=>  {
+        //     let col = ["AliceBlue", "AntiqueWhite",  "Aqua",  "Aquamarine",  "Azure",  "Beige",  "Bisque",  "Black",  "BlanchedAlmond",  "Blue",  "BlueViolet",  "Brown",  "BurlyWood",  "CadetBlue",  "Chartreuse",  "Chocolate",  "Coral",  "CornflowerBlue",  "Cornsilk",  "Crimson",  "Cyan",  "DarkBlue",  "DarkCyan",  "DarkGoldenRod",  "DarkGray",  "DarkGrey",  "DarkGreen",  "DarkKhaki",  "DarkMagenta",  "DarkOliveGreen",  "DarkOrange",  "DarkOrchid",  "DarkRed",  "DarkSalmon",  "DarkSeaGreen",  "DarkSlateBlue",  "DarkSlateGray",  "DarkSlateGrey",  "DarkTurquoise",  "DarkViolet",  "DeepPink",  "DeepSkyBlue",  "DimGray",  "DimGrey",  "DodgerBlue",  "FireBrick",  "FloralWhite",  "ForestGreen",  "Fuchsia",  "Gainsboro",  "GhostWhite",  "Gold",  "GoldenRod",  "Gray",  "Grey",  "Green",  "GreenYellow",  "HoneyDew",  "HotPink",  "IndianRed",  "Indigo",  "Ivory",  "Khaki",  "Lavender",  "LavenderBlush",  "LawnGreen",  "LemonChiffon",  "LightBlue",  "LightCoral",  "LightCyan",  "LightGoldenRodYellow",  "LightGray",  "LightGrey",  "LightGreen",  "LightPink",  "LightSalmon",  "LightSeaGreen",  "LightSkyBlue",  "LightSlateGray",  "LightSlateGrey",  "LightSteelBlue",  "LightYellow",  "Lime",  "LimeGreen",  "Linen",  "Magenta","Maroon",  "MediumAquaMarine",  "MediumBlue",  "MediumOrchid",  "MediumPurple",  "MediumSeaGreen",  "MediumSlateBlue",  "MediumSpringGreen",  "MediumTurquoise",  "MediumVioletRed",  "MidnightBlue",  "MintCream",  "MistyRose",  "Moccasin",  "NavajoWhite",  "Navy",  "OldLace",  "Olive",  "OliveDrab",  "Orange",  "OrangeRed",  "Orchid",  "PaleGoldenRod",  "PaleGreen",  "PaleTurquoise",  "PaleVioletRed",  "PapayaWhip",  "PeachPuff",  "Peru",  "Pink",  "Plum",  "PowderBlue",  "Purple",  "RebeccaPurple","Red",  "RosyBrown",  "RoyalBlue",  "SaddleBrown",  "Salmon",  "SandyBrown",  "SeaGreen",  "SeaShell",  "Sienna",  "Silver",  "SkyBlue",  "SlateBlue",  "SlateGray",  "SlateGrey",  "Snow",  "SpringGreen",  "SteelBlue",  "Tan",  "Teal",  "Thistle",  "Tomato",  "Turquoise",  "Violet",  "Wheat",  "White",  "WhiteSmoke",  "Yellow",  "YellowGreen"];
+        //     let x=Math.floor(Math.random()*col.length);
+        //     document.querySelector("body").style.backgroundColor = col[x] ;
+        //     console.log(col[x]);
+        //     });
+        
+
+
+
+        // M-2. Advance Mathod to add backgroundColor 
+        const ref = document.querySelector(".btn");
+        ref.addEventListener("click",() => {
+            let x=Math.floor(Math.random()*255);
+            let y=Math.floor(Math.random()*255);
+            let z=Math.floor(Math.random()*255);
+            let a=Math.random();
+            bgcol = `rgba(${x},${y},${z},${a})`;
+            document.querySelector("body").style.backgroundColor = bgcol ;
+        });
+        
+    </script>
+</body>
+</html>

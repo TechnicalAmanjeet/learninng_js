@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <!-- addin google font roboto to our website  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- adding custom stylesheet  -->
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body{
+        background-color: aquamarine;
+        height: 95vh;
+        width: 95vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    main{
+        background-color: whitesmoke;
+        border: 10px solid rgb(133, 133, 224);
+        border-radius: 20px;
+        width: 70%;
+        height: 50%;
+        text-align: center;
+        /* margin: auto; */
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+    }
+    h1{
+        font-size: 50px ;
+    }
+    p{
+        font-size: 120px;
+        font-weight: 1000;
+    }
+    .btn1,.btn2{
+        padding: 10px;
+        font-size: 30px ;
+        background-color: rgb(133, 133, 224);
+        border-radius: 5px;
+        border: 2px solid yellow;
+    }
+    .btn1:hover,.btn2:hover{
+        background-color: rgb(51, 39, 39);
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Counter</h>
+        <p class="out">0</p>
+        <div class="btn">
+            <button class="btn1">Increase</button>
+            <button class="btn2">Decrease</button>
+        </div>
+    </main>
+
+    <!-- javascript code begin -->
+    <script>
+        var num = 0;
+        console.log(num);
+        document.querySelector(".btn1").addEventListener("click",()=>{
+            num+=1;
+            console.log(num);
+            document.querySelector(".out").innerHTML = num;
+            document.querySelector(".btn1").style.border = "4px solid #8585E0";
+            document.querySelector(".btn1").style.backgroundColor= "rgb(51, 39, 39)";
+            document.querySelector(".btn2").style.backgroundColor= "#8585E0";
+            document.querySelector(".btn2").style.border = "2px solid yellow";
+        });
+        document.querySelector(".btn2").addEventListener("click",()=>{
+            num-=1;
+            console.log(num);
+            document.querySelector(".out").innerHTML = num;
+            document.querySelector(".btn2").style.border = "4px solid #8585E0";
+            document.querySelector(".btn1").style.border = "2px solid yellow";
+            document.querySelector(".btn1").style.backgroundColor= "#8585E0";
+            document.querySelector(".btn2").style.backgroundColor= "rgb(51, 39, 39)";
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing Background Color.</title>
+
+    <!-- addin google font roboto to our website  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- adding custom stylesheet to our website -->
+    <style>
+        body{
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: space-between;
+            flex-direction: column;
+            text-align: center;
+        }
+        h1{
+            font-weight: bolder;
+        }
+        .btn{
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px;
+            border: 2px solid black;
+            width: 150px;
+            border-radius: 20px;
+            margin: auto;
+        }
+        .btn:hover{
+            border: none;
+            background-color: rgb(53, 4, 4);
+            color: whitesmoke;
+            /* background: linear-gradient(); */
+        }
+        p{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CLICK THE BUTTON BELLOW TO GENERATE A RANDOM GRADIENT COLOR COMBINATION</h1>
+    <div class="main">
+        <!-- <h2>Click on the butoon to Change Background color</h2> -->
+        <button class="btn">Click me.</button>
+        <p></p>
+    </div>
+    <div></div>
+    
+    <!-- javascrip begins here -->
+    <script>
+  
+        // m-1  Advance Mathod to add backgroundColor 
+        const ref = document.querySelector(".btn");
+        ref.addEventListener("click",() => {
+            let x=Math.floor(Math.random()*255);
+            let y=Math.floor(Math.random()*255);
+            let z=Math.floor(Math.random()*255);
+            let a=Math.random().toFixed(2);
+            // let a=1;
+            bgcol1 = `rgba(${x},${y},${z},${a})`;
+            x=Math.floor(Math.random()*255);
+            y=Math.floor(Math.random()*255);
+            z=Math.floor(Math.random()*255);
+            a=Math.random().toFixed(2);
+            bgcol2 = `rgba(${x},${y},${z},${a})`;
+            x=Math.floor(Math.random()*255);
+            y=Math.floor(Math.random()*255);
+            z=Math.floor(Math.random()*255);
+            a=Math.random().toFixed(2);
+            bgcol3 = `rgba(${x},${y},${z},${a})`;
+            let deg = Math.floor(Math.random()*360);
+            let bgcol = `linear-gradient(${deg}deg, ${bgcol1}, ${bgcol2},${bgcol3})`;
+            document.querySelector("body").style.background = bgcol ;
+            document.querySelector("p").innerHTML = `background : ${bgcol}`;
+        });
+        
+        // m-1 Simple way => by using hax-code 
+        // document.querySelector(".btn").addEventListener("click", () => {
+        // var hex_numbers = ["0","1","2","3","4","5","6","7","8","9","A", "B", "C", "D", "E", "F"];
+        // var hexcode1 = "";
+        // var hexcode2 = "";
+        // var random_index = 0;
+  
+        // for(let i = 0; i < 6;i++){
+        //     random_index = Math.floor(Math.random() * hex_numbers.length);
+        //     hexcode1 += hex_numbers[random_index];
+        //     random_index = Math.floor(Math.random() * hex_numbers.length);
+        //     hexcode2 += hex_numbers[random_index];
+        // }
+
+        // let bgcol = `linear-gradient(to right, #${hexcode1}, #${hexcode2})`;
+
+        // document.body.style.background = bgcol;
+        // document.querySelector("p").innerHTML = bgcol;
+        // });
+    </script>
+</body>
+</html>

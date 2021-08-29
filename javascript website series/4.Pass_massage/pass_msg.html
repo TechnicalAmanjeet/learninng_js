@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sending Massage.</title>
+
+    <!-- addin google font roboto to our website  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- adding custom stylesheet to our website -->
+    <style>
+        /* *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        } */
+        body{
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            height: 95vh;
+            justify-content: space-between;
+            flex-direction: column;
+            /* text-align: center; */
+            background-color: aquamarine;
+        }
+        .main{
+            width: 70vw;
+            min-height: 40vh;
+            background-color: whitesmoke;
+            margin: auto;
+            padding: 25px;
+        }
+        .main h1{
+            text-align: center;
+        }
+        hr {
+            border: none;
+            border-top: 3px double rgb(173, 162, 162);
+            /* width: 80%; */
+            color: #333;
+            overflow: visible;
+            text-align: center;
+            height: 5px;
+            }
+
+        hr:after {
+            background: #fff;
+            content: '§';
+            padding: 0 4px;
+            position: relative;
+            top: -13px;
+            }
+        #msg{
+            width: 80%;
+            /* height: 50px; */
+            padding: 2px 5px;
+            font-size: 30px;
+            /* background-image: url(./msg.png); */
+        }
+        img{
+            /* width: 20px; */
+            height: 25px;
+            padding: 1px;
+            border: 1px solid rgb(177, 157, 157);
+        }
+        #submit{
+            padding: 5px 10px;
+            font-size: 20px;
+        }
+        p{
+            width: 80%;
+            margin: auto;
+            /* align-items: center;
+        } */
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Pass The Massage</h1>
+        <hr >
+            <label for="msg">Enter a Massage  </label>
+            <br><br>
+            <img src="./msg.png" alt="massage image">
+            <textarea name="msd" id="msg" cols="30" rows="4"></textarea>
+            <br><br>
+            <button class="submit">Send</button>
+        <p></p>
+    </div>
+    
+    <!-- javascrip begins here -->
+    <script>
+        /* function onkey(){
+           const passwd = document.getElementById("msg").value; */
+           /* document.querySelector("p").innerHTML = `You Entered ${event.key} and ${passwd}`; */
+           /* document.querySelector("p").innerHTML = `Your Massage : ${passwd}`;
+        }; */
+        /* function onkey(){
+            console.log(1);
+        } */
+        let ref = document.querySelector(".submit");
+        ref.addEventListener("click",() => {
+            const passwd = document.getElementById("msg").value; 
+           document.querySelector("p").innerHTML = `Your Massage : ${passwd}`; 
+           /* console.log("ram"); */
+       });
+
+       /* let outputref = document.querySelector("#submit");
+        outputref.addEventListener("click",()=>{
+            mass();
+        });
+        function mass() {
+            document.querySelector("p").textContent = document.querySelector("#msg").value;
+            document.querySelector("#msg").value = "";
+        } */
+    </script>
+</body>
+</html>

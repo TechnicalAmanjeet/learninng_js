@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock.</title>
+    
+    <!-- addin google font roboto to our website  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- adding custom stylesheet  -->
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        main{
+            width: 100vw;
+            height: 100vh;
+            background-color: aquamarine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin:  auto;
+        }
+        .output{
+            /* background-color: aqua; */
+            width: 80%;
+            /* height: ; */
+            text-align: center;
+            padding: 4px 10px;
+            font-size: 80px;
+            font-weight: bolder;
+            display: flex;
+            justify-content: center;
+        }
+        p{
+            /* margin-left: 5px; */
+            /* border: 2px solid red; */
+        }
+        .a,.b,.c{
+            width: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="output">
+            <p class="a">0</p>
+            <p>:</p>
+            <p class="b">0</p>
+            <p>:</p>
+            <p class="c">0</p>
+        </div>
+    </main>
+
+    <!-- custum javascript start from here -->
+    <script>
+        var a=00,b=00,c=00;
+        var settime = null;
+        var cli1 = false;
+        var cli2 = false;
+        (function() {
+        })()
+        
+        document.querySelector("main").addEventListener("click",()=>{
+            if(cli==false){
+                console.log(cli);
+                settime=setInterval(repeat,1);
+                cli = true;
+            }
+        })
+
+        function repeat(){
+                c+=1;
+                if(c==100){ b+=1; c=0;}            
+                if(b==60){a+=1;b=0;}
+                // var tm = `${a} : ${b} : ${c} `;
+                document.querySelector(".a").innerHTML=a;
+                document.querySelector(".b").innerHTML=b;
+                document.querySelector(".c").innerHTML=c;
+            }
+        document.querySelector("main").addEventListener("click",()=>{
+           if(cli){
+               console.log(cli);
+                clearInterval(settime);
+                cli = false;
+           }
+        })
+    </script>
+</body>
+</html>
