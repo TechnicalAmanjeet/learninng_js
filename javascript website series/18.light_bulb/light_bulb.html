@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Massage length.</title>
+
+    <!-- addin google font roboto to our website  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- adding custom stylesheet to our website -->
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            height: 95vh;
+            justify-content: space-between;
+            flex-direction: column;
+            /* text-align: center; */
+            background-color: aquamarine;
+        }
+        .main{
+            width: 80vw;
+            height: 80vh;
+            padding: 40px;
+            text-align: center;
+        }
+        .jala,.buta{
+            padding: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            border: 2px solid brown;
+            border-radius: 10px;
+            background-color: red;
+        }
+        .jala:hover,.buta:hover{
+            color: white;
+            background-color: black;
+        }
+        /* .main p{
+            width: 50vw;
+            height: 50vh;
+            margin: 60px auto;
+
+        } */
+        img{
+            width: 70vw;
+            height: 60vh;
+            display: block;
+            margin: 60px 10vw;
+            border: 5px solid red;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <button class="jala">Turn off</button>
+        <button class="buta">Turn on</button>
+        
+            <img id="img" src="./bulb-buta.jpg" alt="buta-bulb" >
+    
+    </div>
+    
+    <!-- javascrip begins here -->
+    <script>
+        document.querySelector(".jala").addEventListener("click",()=>{
+            document.querySelector("#img").src ="./bulb-buta.jpg";
+            // document.querySelector(".jala").style.cssText =`
+            // backgroundColor : black;
+            // color : white;
+            // `;
+            // alert("working");
+        })
+        document.querySelector(".buta").addEventListener("click",()=>{
+            document.querySelector("#img").src = "./jala-bulb.jpg";
+            // alert("working");
+        })
+    </script>
+</body>
+</html>

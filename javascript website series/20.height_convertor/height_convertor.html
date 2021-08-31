@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Massage.</title>
+
+    <!-- addin google font roboto to our website  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- adding custom stylesheet to our website -->
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body{
+            display: flex;
+            height: 95vh;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background-color: aquamarine;
+        }
+        .container{
+            height: 70vh;
+            width: 60vw;
+            background-color: aqua;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin: auto;
+        }
+        h1{
+            font-size: 4em;
+            font-weight: bolder;
+        }
+        p{
+            font-size: 1.5em;
+            font-weight: bolder;
+            width: 50vw;
+        }
+        .output{
+            font-size: 3em;
+            font-weight: bolder;
+        }
+        input{
+            width: 250px;
+            height: 50px;
+            padding: 3px 13px;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        .submit {
+            padding: 10px;
+            width: 180px;
+            color: white;
+            background-color: brown;
+            border: 2px solid red;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>Height Convertor</h1>
+        <p>
+            <label for="feet">Feet : </label>
+            <input type="text" name="feet" id="feet">
+        </p>
+        <p>
+            <label for="inches">Inches :   </label>
+            <input type="number" name="inches" id="inches">
+        </p>
+        <button class="submit">Convert to CM</button>
+        <p class="output"></p>
+        <p></p>
+        
+    </div>
+    
+    <!-- javascrip begins here -->
+    <script>
+        
+        document.querySelector(".submit").addEventListener("click",()=>{
+            const feet = document.querySelector("#feet").value;
+            let inch = document.querySelector("#inches").value;
+            let cm = feet*30.48 + inch*2.54;
+            document.querySelector(".output").innerHTML = `Height in cm : ${cm.toFixed(2)} .`;
+            // alert(feet);
+            // alert(inch);
+        })
+    </script>
+</body>
+</html>

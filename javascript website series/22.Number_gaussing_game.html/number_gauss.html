@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Massage.</title>
+
+    <!-- addin google font roboto to our website  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- adding custom stylesheet to our website -->
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body{
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background-color: aquamarine;
+        }
+        .container{
+            height: 80vh;
+            width: 80vw;
+            background-color: aqua;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin: auto;
+        }
+        h1{
+            font-size: 4em;
+            font-weight: bolder;
+            color: whitesmoke;
+            margin: 10px auto;
+            width: 86vw;
+            background-color: brown;
+            border-radius: 20px;
+            border: 3px solid red;
+        }
+        p{
+            font-size: 2em;
+            font-weight: bold;
+        }
+        .p3{
+            font-size: 3em;
+            color: brown;
+            font-weight: bolder;
+            line-height: 80px;
+        }
+        input{
+            width: 450px;
+            height: 100px;
+            font-size: 60px;
+            font-weight: bold;
+            padding: 5px 20px;
+            text-align: center;
+        }
+        .submit{
+            width: 400px;
+            padding: 10px;
+            background-color: rgb(85, 47, 128);
+            color: whitesmoke;
+            font-size: 40px;
+            font-weight: bolder;
+            border: 2px solid red;
+            border-radius: 40px;
+        }
+        .yourgauss{
+            background-color: red;
+            padding: 5px 20px;
+            color: rgb(17, 2, 31);
+        }
+        .lh{
+            padding: 5px 20px;
+            color: rgb(17, 2, 31);
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Number Gaussing Game.</h1>
+    <div class="container">
+        <p class="p1">Try and Gauss a random number beetween 0 and 500. <br> You have 10 attenpts to gauss the lucky number.</p>
+        <!-- <p class="p2"></p> -->
+        <p class="p3">
+            <label for="gauss">Gauss a Number </label>
+            <br>
+            <input type="number" name="gauss" id="gauss">
+            <br>
+            <button class="submit">Submit Gauss</button>
+        </p>
+        <p class="previous">Your Previous Gauss : </p>
+        <p class="lh">User choice </p>
+        <p class="yourgauss">Your Ans : </p>
+    </div>
+    
+    <!-- javascrip begins here -->
+    <script>
+        var n=10;
+        var num = Math.floor(Math.random()*500);
+        // const num = 100;
+        var previous = "Your Previous Gauss : ";
+        document.querySelector(".submit").addEventListener("click",()=>{
+            let userNum = document.querySelector("#gauss").value;
+            if(n==0){
+                previous+=" "+userNum +" .";
+                document.querySelector(".previous").innerHTML = previous;
+                document.querySelector(".p3").innerHTML = "oops! You Lost!";
+                document.querySelector(".p3").style.cssText = `
+                background-color : brown;
+                width : 100vw;
+                height : 200px;
+                color : white;
+                font-size: 120px;
+                `;
+                return;
+            }
+            if(userNum==num){
+                document.querySelector(".yourgauss").innerHTML = "Your Ans : Right.";
+                previous+=" "+userNum +" .";
+                document.querySelector(".previous").innerHTML = previous;
+                document.querySelector(".p1").innerHTML = `Try and Gauss a random number beetween 0 and 500. You have ${n} attenpts to gauss the lucky number.`;
+                document.querySelector(".lh").innerHTML = "Users choice is correct! ."
+                document.querySelector(".p3").innerHTML = "You Won!";
+                document.querySelector(".p3").style.cssText = `
+                background-color : green;
+                width : 100vw;
+                height : 200px;
+                color : white;
+                font-size: 120px;
+                `;
+                return;
+            }
+            else if(userNum>num){
+                document.querySelector(".lh").innerHTML = "Users choice is too high! ."
+            }
+            else{
+                document.querySelector(".lh").innerHTML = "Users choice is too low! ."
+            }
+            
+            previous+=" "+userNum +" ,";
+            n-=1;
+            document.querySelector(".yourgauss").innerHTML = "Your Ans : Wrong.";
+            document.querySelector(".p1").innerHTML = `Try and Gauss a random number beetween 0 and 500. You have ${n} attenpts to gauss the lucky number.`;
+            document.querySelector(".previous").innerHTML = previous;
+            // console.log(previous);
+            // console.log(n);
+        })
+    </script>
+</body>
+</html>

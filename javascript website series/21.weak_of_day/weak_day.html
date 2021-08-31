@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Massage.</title>
+
+    <!-- addin google font roboto to our website  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- adding custom stylesheet to our website -->
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body{
+            display: flex;
+            height: 95vh;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background-color: aquamarine;
+        }
+        .container{
+            height: 40vh;
+            min-width: 70vw;
+            background-color: aqua;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin: auto;
+        }
+        h1{
+            font-size: 4em;
+            font-weight: bolder;
+            color: brown;
+        }
+        p{
+            font-size: 3em;
+            font-weight: bolder;
+            min-width: 60vw;
+            color: rgb(45, 45, 155);
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1> Today is </h1>
+        
+        <p class="output1"></p>
+
+        <p class="output2">
+
+        </p>
+        
+    </div>
+    
+    <!-- javascrip begins here -->
+    <script>
+        let time = new Date();
+        let day = time.getDay();
+        // let day=3;
+        let out1= " ";
+        let out2 = " ' ";
+        if(day==0) {
+            out2+=" To to Chillax!";
+            out1+=" Sunday ";
+        }
+        else if(day==1){
+            out1+="Monday";
+            out2+=" Monday Morning Blues!";
+        }
+        else if(day==2){
+            out1+=" Tuesday ";
+            out2+=" Taco Time!"
+        }
+        else if(day==3){
+            out1+=" Wedensday ";
+            out2+="Two more day to teh weekend";
+        }
+        else if(day==4){
+            out1+="Thrusday";
+            out2+="The weekend is almost here";
+        }
+        else if(day==5){
+            out1+="Friday"
+            out2+="Weekend is Here!"
+        }
+        else if(day==7){
+            out1+="Saturday";
+            out2+="Time to Party!";
+        }
+        out2+=" ' "
+        document.querySelector(".output1").innerHTML = out1;
+        document.querySelector(".output2").innerHTML = out2;
+    </script>
+</body>
+</html>

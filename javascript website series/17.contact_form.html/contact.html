@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Massage length.</title>
+
+    <!-- addin google font roboto to our website  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- adding custom stylesheet to our website -->
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: roboto;
+            /* color: whitesmoke; */
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            background-color: aquamarine;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 65vw;
+            /* color: rgb(3, 3, 83); */
+            height: 82vh;
+            background-color: black;
+            border-radius: 30px;
+            padding: 4vh 4vw;
+            /* text-align: center; */
+        }
+
+        h1 {
+            width: 40vw;
+            /* border: 2px solid red; */
+            color: aliceblue;
+            text-align: center;
+            margin: 0px auto;
+            border-radius: 10px;
+            padding: 5px 10px;
+            /* background-color: rgb(27, 10, 10); */
+            margin-bottom: 20px;
+        }
+
+        p {
+            display: flex;
+            flex-direction: column;
+            line-height: 40px;
+            margin-bottom: 20px;
+        }
+
+        label{
+            color: rgb(40, 40, 155);
+            font-size: 30px;
+        }
+        input {
+            font-size: 20px;
+            font-weight: 1000;
+            padding: 2px 10px;
+            color: black;
+        }
+        #massage{
+            font-size: 20px;
+            padding: 2px 20px;
+            color: black
+        }
+        .sub{
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-around;
+            
+        }
+        .sub1{
+            width: 160px;
+            color: whitesmoke;
+            border-radius: 30px;
+            padding: 10px 20px;
+            background-color: brown;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        #reset{
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Plese Contact me!</h1>
+
+        <form action="#">
+            <p>
+                <label for="name1">Name </label>
+                <input type="text" name="name1" id="name">
+            </p>
+    
+            <p>
+                <label for="email1">Email </label>
+                <input type="email" name="email1" id="email">
+            </p>
+    
+            <p>
+                <label for="massage">Massage</label>
+                <textarea name="massage" id="massage" cols="20" rows="6"></textarea>
+            </p>
+            <div class="sub">
+                <input type="submit" value="Send" class="sub1" id="submit">
+                <input type="reset" value="reset"   class="sub1" id="reset">
+            </div>
+        </form>
+    </div>
+
+    <!-- javascrip begins here -->
+    <script>
+
+    </script>
+</body>
+
+</html>

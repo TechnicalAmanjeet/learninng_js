@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bmi Calculator</title>
+    <!-- addin google font roboto to our website  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- adding custom stylesheet  -->
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            
+        }
+        body{
+            background-color: aquamarine;
+
+        }
+        .background{
+            width: 80vw;
+            height: 60vh;
+            background-color: red;
+            color: white;
+            margin: 50px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+        }
+        h1{
+            text-align: center;
+            width: 70vw;
+        }
+        .btn{
+            padding: 10px;
+            height: 60px;
+            width: 140px;
+            display: block;
+            margin: 40px auto;
+            font-size: 20px;
+            font-weight: 1000;
+            border-radius: 20px;
+            background-color: brown;
+            border: 2px solid red;
+            color: whitesmoke;
+        }
+        .btn:hover{
+            background-color: whitesmoke;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+        <div class="background">
+            <h1>My background color will change when my button below is clicked.</h1>
+        </div>
+        <button class="btn">Click me</button>
+
+    <script>
+        document.querySelector(".btn").addEventListener("click",()=>{
+            let r=Math.floor(Math.random()*255);
+            let b=Math.floor(Math.random()*255);
+            let g=Math.floor(Math.random()*255);
+            let ab=(Math.random());
+            let out = `rgba(${r},${g},${b},${ab})`;
+            document.querySelector(".background").style.backgroundColor = out;
+            // document.querySelector("body").style.backgroundColor = out;
+            // let x=Math.floor(Math.random()*255);
+            // let y=Math.floor(Math.random()*255);
+            // let z=Math.floor(Math.random()*255);
+            // let a=Math.random();
+            // bgcol = `rgba(${x},${y},${z},${a})`;
+            // document.querySelector(".background").style.backgroundColor = bgcol ;
+            // console.log(out);
+            // console.log(bgcol);
+        })
+        // const ref = document.querySelector(".btn");
+        // ref.addEventListener("click",() => {
+        //     let x=Math.floor(Math.random()*255);
+        //     let y=Math.floor(Math.random()*255);
+        //     let z=Math.floor(Math.random()*255);
+        //     let a=Math.random();
+        //     bgcol = `rgba(${x},${y},${z},${a})`;
+        //     document.querySelector(".background").style.backgroundColor = bgcol ;
+        //     // let r=Math.floor(Math.random()*255);
+        //     // let b=Math.floor(Math.random()*255);
+        //     // let g=Math.floor(Math.random()*255);
+        //     // let a=Math.floor(Math.random());
+        //     // let out = `rgba(${r},${g},${b},${a})`;
+        //     // document.querySelector(".background").style.backgroundColor = out;
+        //     // // document.querySelector(".background").style.backgroundColor = out ;
+        // });
+    </script>
+</body>
+
+</html>

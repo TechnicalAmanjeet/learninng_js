@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator</title>
+    <!-- addin google font roboto to our website  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- adding custom stylesheet  -->
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        main {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            background-color: aquamarine;
+            flex-direction: column;
+            justify-content: space-evenly;
+            text-align: center;
+        }
+
+        main .btn {
+            width: 100px;
+            padding: 8px;
+            margin: 0 auto;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+
+        main .btn:hover {
+            color: whitesmoke;
+            background-color: black;
+        }
+
+        .box {
+            width: 80vw;
+            min-height: 40vh;
+            background-color: aqua;
+            margin: 0 auto;
+            border-radius: 30px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-; */
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        p,table{
+            font-size: 20px;
+            font-weight: bold;
+            /* width: 70vw; */
+            line-height: 30px;
+            word-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Loan Calculator</h1>
+        <div class="box">
+            <div>
+                <table>
+                    <tr>
+                        <td><label for="amount">Loan amount :&nbsp; $</label></td>
+                        <td><input type="number" name="amount" id="amount"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="rate">Intrest Rate  :&nbsp; %</label></td>
+                        <td><input type="number" name="rate" id="rate"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="month">Months to Pay : </label></td>
+                        <td><input type="number" name="month" id="month"></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <p class="total"></p>
+            <p class="output"></p>
+            
+            <button class="btn">Click me</button>
+        </div>
+        <h2></h2>
+        <h2></h2>
+        <h2></h2>
+    </main>
+
+    <script>
+        document.querySelector(".output").innerHTML = "Monthly Payment : "
+        document.querySelector(".total").innerHTML = "Total Amount to be paid : "
+        document.querySelector(".btn").addEventListener("click", () => {
+            let amount = document.getElementById("amount").value;
+            let rate = document.getElementById("rate").value;
+            let month = document.getElementById("month").value;
+            let total = amount * (1+rate*(month/12)).toFixed(2);
+            document.querySelector(".output").innerHTML = `Monthly Payment : ${(total/month).toFixed(2)}.`;
+            document.querySelector(".total").innerHTML = `Total Amount to be Paid : ${total}.`;
+            // alert(total)
+        });
+    </script>
+</body>
+
+</html>

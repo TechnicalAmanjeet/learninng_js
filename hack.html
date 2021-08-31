@@ -1,3 +1,6 @@
+<!-- doubt on line 58 to 61. why ${pass} is not giving output on screen -->
+<!-- doubt clear . i have used document.getelementbyid("id").value; to take data from input field  -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +35,10 @@
             width: 200px;
             height: 30px;
         }
+        p{
+            font-size: 25px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -39,18 +46,27 @@
         <div class="form">
             <form action="" method="get">
                 <label for="password">Enter password : </label>
-                <input type="text" name="password" id="password">
+                <input type="password" name="password" id="txt" onkeypress="onkey()">
             </form>
         </div>
-        <input type="password" name="" id="txt" onkeypress="onkey()">
         <p class="output"></p>
+        <p class="outputs"></p>
     </div>
 
     <script>
-       const onkey= () =>{
-        //    var s=new String();
-           document.querySelector(".output").innerHTML = `You Entered ${event.key} and your key is ${event.code}`;
+        
+       function onkey(){
+           var pass=new String();
+           const passwd = document.getElementById("txt").value;
+           document.querySelector(".output").innerHTML = `You Entered ${event.key} and ${passwd}`;
+        //    document.querySelector("outputs").innerHTML = `Password : ${s}`;
+           pass+=event.key;
+           console.log(pass);
        }
+    //    const onkey= () =>{
+    //     //    var s=new String();
+    //        document.querySelector(".output").innerHTML = `You Entered ${event.key} and your key is ${event.code}`;
+    //    }
 </script>
 </body>
 </html>

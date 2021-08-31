@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Massage.</title>
+
+    <!-- addin google font roboto to our website  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <!-- adding custom stylesheet to our website -->
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            height: 95vh;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background-color: aquamarine;
+        }
+        p{
+            font-size: 5em;
+            font-weight: bold;
+
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <p></p>
+    
+    <!-- javascrip begins here -->
+    <script>
+        let Name = prompt("Enter Your Name : "," ")
+        // prompt("Enter your Name : ","Name")
+        let time = new Date().toLocaleTimeString();
+        // let timelocal = time.toLocaleTimeString;
+        // console.log(timelocal);
+        let greet = " Good ";
+        if(time.slice(-2)=="PM" && time.slice(0,2)>=5){
+            greet+=" Evening ";
+        }
+        else if(time.slice(0,2)>=0){
+            greet+=" Afternoon "
+        }
+        else if(time.slice(-2)=="AM"){
+            greet+=" Morning ";
+        }
+        greet+="' " + Name + " '.";
+        document.querySelector("p").innerHTML = `${greet}`;
+    </script>
+</body>
+</html>

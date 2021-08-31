@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bmi Calculator</title>
+    <!-- addin google font roboto to our website  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <!-- adding custom stylesheet  -->
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+       main{
+           padding: 40px 50px;
+           line-height: 60px;
+       }
+       .box{
+
+           display: flex;
+           /* justify-content: space-around; */
+       }
+
+       p{
+           height: 40px;
+           width: 40px;
+           border: 2px solid black;
+           margin-right: 10px;
+           border-radius: 50%;
+       }
+       .col1{
+           background-color: whitesmoke;
+       }
+       
+       .col2{
+           background-color: rgb(133, 36, 36);
+       }
+       .col3{
+           background-color: yellow;
+       }
+       .col4{
+           background-color: blue;
+       }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Color Scheme switcher</h1>
+        <div class="box">
+            <p class="col1"></p>
+            <p class="col2"></p>
+            <p class="col3"></p>
+            <p class="col4"></p>
+        </div>
+        <h3>Try Clicking on the colors above to change the color on page! </h3>
+    </main>
+
+    <script>
+        document.querySelector(".col1").addEventListener("click",()=>{
+            document.querySelector("body").style.backgroundColor = "whitesmoke"
+            document.querySelector("body").style.color = "black"
+        })
+        document.querySelector(".col2").addEventListener("click",()=>{
+            document.querySelector("body").style.backgroundColor = "rgb(180, 170, 170)"
+            document.querySelector("body").style.color = "black"
+        })
+        document.querySelector(".col3").addEventListener("click",()=>{
+            document.querySelector("body").style.backgroundColor = "yellow"
+            document.querySelector("body").style.color = "black"
+        })
+        document.querySelector(".col4").addEventListener("click",()=>{
+            document.querySelector("body").style.backgroundColor = "blue"
+            document.querySelector("body").style.color = "white"
+        })
+    </script>
+</body>
+
+</html>

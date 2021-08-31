@@ -74,6 +74,7 @@
             margin: auto;
             /* align-items: center;
         } */
+    }
     </style>
 </head>
 <body>
@@ -103,6 +104,7 @@
         ref.addEventListener("click",() => {
             const passwd = document.getElementById("msg").value; 
            document.querySelector("p").innerHTML = `Your Massage : ${passwd}`; 
+           alert(passwd)
            /* console.log("ram"); */
        });
 
